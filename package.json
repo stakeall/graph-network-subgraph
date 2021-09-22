@@ -20,6 +20,9 @@
     "deploy-mainnet-staging-no-ipfs": "yarn && yarn prep:no-ipfs && yarn prepare:mainnet && graph deploy graphprotocol/graph-network-mainnet-staging --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-mainnet": "yarn && yarn prep:ipfs && yarn prepare:mainnet && graph deploy graphprotocol/graph-network-mainnet --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-mainnet-no-ipfs": "yarn && yarn prep:no-ipfs && yarn prepare:mainnet && graph deploy graphprotocol/graph-network-mainnet --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "create-stakeall-testnet": "graph create --node http://35.208.215.170:8020/ stakeall/graph-network-mainnet-1",
+    "remove-stakeall-testnet": "graph remove --node http://35.208.215.170:8020/ stakeall/graph-network-mainnet-1",
+    "deploy-stakeall-testnet": "yarn && yarn prep:no-ipfs && yarn prepare:mainnet && graph deploy stakeall/graph-network-mainnet-1 --ipfs https://api.thegraph.com/ipfs/  --node http://35.208.215.170:8020/",
     "deploy-testnet": "yarn && yarn prep:ipfs && yarn prepare:rinkeby && graph deploy graphprotocol/graph-network-testnet --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-testnet-no-ipfs": "yarn && yarn prep:no-ipfs && yarn prepare:rinkeby && graph deploy graphprotocol/graph-network-testnet --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-testing": "yarn && yarn prep:<IPFS_OR_NO-IPFS> && yarn <INSERT_MAINNET_OR_RINKEBY> && graph deploy <INSERT_SUBGRAPH_NAME> --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
@@ -51,5 +54,7 @@
     "url": "https://github.com/graphprotocol/graph-network-subgraph/issues"
   },
   "homepage": "https://github.com/graphprotocol/graph-network-subgraph#readme",
-  "dependencies": {}
+  "dependencies": {
+    "ts-node": "^10.2.1"
+  }
 }
